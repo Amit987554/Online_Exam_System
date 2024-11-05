@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Exam</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">Amit@123</property>
+
+        <!-- Schema generation -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Optional properties -->
+        <property name="hibernate.show_sql">true</property> <!-- Shows generated SQL statements -->
+        <property name="hibernate.format_sql">true</property> <!-- Formats SQL output -->
+
+        <!-- Connection pool settings -->
+        <property name="hibernate.connection.pool_size">10</property>
+
+        <!-- Cache settings (optional) -->
+        <property name="hibernate.cache.use_second_level_cache">false</property>
+
+        <!-- Additional XML mapping files or annotated classes should be added in the code -->
+        <mapping class="org.example.Model.User"/>
+        <mapping class="org.example.Model.Questions"/>
+
+
+    </session-factory>
+</hibernate-configuration>
